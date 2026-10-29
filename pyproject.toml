@@ -1,0 +1,39 @@
+[build-system]
+requires = ["setuptools>=69", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "phase-programmable-multiport"
+version = "0.1.0"
+description = "Inverse design of a coherent splitter and a phase-programmable optical decoder"
+readme = "README.md"
+requires-python = ">=3.10,<3.13"
+license = {file = "LICENSE"}
+dependencies = [
+  "tidy3d==2.10.0",
+  "numpy>=1.26,<2",
+  "autograd>=1.7,<1.8",
+  "optax==0.2.4",
+  "jax==0.4.38",
+  "jaxlib==0.4.38",
+  "matplotlib>=3.9,<3.10",
+  "PyYAML>=6,<7",
+]
+
+[project.optional-dependencies]
+notebooks = ["jupyterlab>=4,<5", "ipykernel>=6,<7"]
+dev = ["pytest>=7,<9", "black==24.8.0", "nbformat>=5.10,<6"]
+
+[project.scripts]
+multiport = "coherent_multiport.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["src"]
+
+[tool.black]
+line-length = 88
+target-version = ["py310"]

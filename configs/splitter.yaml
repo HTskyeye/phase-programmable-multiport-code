@@ -1,0 +1,23 @@
+# All lengths are in micrometres; wavelengths below are in nanometres.
+device: splitter
+nx: 26
+ny: 36
+pixel_um: 0.08
+mesh_um: 0.01
+waveguide_width_um: 0.15
+port_pitch_um: 1.2
+fixed_permittivity: 11.4
+design_permittivity: [4.7, 11.0]
+source_band_nm: [1450, 1550]
+optimization_band_nm: [1455, 1545]
+optimization_points: 19
+validation_band_nm: [1440, 1560]
+validation_points: 501
+iterations: 50
+seed: 888
+learning_rate: 0.05
+decay_rate: 0.8
+decay_steps: 5
+ratio_penalty: 0.1
+penalty_start: 0
+phase_weight: 1.5

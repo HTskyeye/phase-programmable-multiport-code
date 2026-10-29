@@ -1,0 +1,24 @@
+# Three single-port excitations, ordered top / middle / bottom.
+device: decoder
+nx: 36
+ny: 36
+pixel_um: 0.08
+mesh_um: 0.01
+waveguide_width_um: 0.15
+port_pitch_um: 1.2
+fixed_permittivity: 11.4
+design_permittivity: [4.7, 11.0]
+source_band_nm: [1460, 1540]
+optimization_band_nm: [1470, 1530]
+optimization_points: 13
+validation_band_nm: [1450, 1550]
+validation_points: 501
+iterations: 60
+seed: 777
+learning_rate: 0.05
+decay_rate: 0.8
+decay_steps: 5
+ratio_penalty: 0.1
+# Zero-based update index: the penalty starts at update 41.
+penalty_start: 40
+phase_weight: 0.0
